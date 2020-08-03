@@ -2,19 +2,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using FileUploadWebApi.Attributes;
-//using Microsoft.AspNetCore.Authorization;
+using SampleWebApi.Attributes;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace FileUploadWebApi.Controllers
+namespace SampleWebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    [Produces("application/json")]
-    
-    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    [Produces("application/json")]    
+    [Authorize]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -32,7 +30,7 @@ namespace FileUploadWebApi.Controllers
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
-[Authorize]
+        [ProducesResponseType(typeof(string), StatusCodes.Status401Unauthorized)]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
@@ -41,8 +39,7 @@ namespace FileUploadWebApi.Controllers
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = rng.Next(-20, 55),
                 Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+            }).ToArray();
         }
     }
 }

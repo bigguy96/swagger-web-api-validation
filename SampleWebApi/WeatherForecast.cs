@@ -1,6 +1,6 @@
 using System;
 
-namespace FileUploadWebApi
+namespace SampleWebApi
 {
     public class WeatherForecast
     {

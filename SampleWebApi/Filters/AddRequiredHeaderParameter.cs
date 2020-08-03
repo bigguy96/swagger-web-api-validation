@@ -5,7 +5,7 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FileUploadWebApi.Filters
+namespace SampleWebApi.Filters
 {
     public class AddRequiredHeaderParameter : IOperationFilter
     {

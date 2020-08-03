@@ -1,0 +1,14 @@
+﻿https://mattfrear.com/2018/07/21/add-an-authorization-header-to-your-swagger-ui-with-swashbuckle-revisited/
+https://stackoverflow.com/questions/31464359/how-do-you-create-a-custom-authorizeattribute-in-asp-net-core
+https://devblogs.microsoft.com/aspnet/jwt-validation-and-authorization-in-asp-net-core/
+https://www.mithunvp.com/write-custom-asp-net-core-middleware-web-api/
+https://www.codeproject.com/Articles/1228892/Securing-ASP-NET-CORE-Web-API-using-Custom-API-Key
+https://github.com/capcom923/MySwashBuckleSwaggerWithJwtToken
+https://jasonwatmore.com/post/2019/10/11/aspnet-core-3-jwt-authentication-tutorial-with-example-api
+https://stackoverflow.com/questions/43447688/setting-up-swagger-asp-net-core-using-the-authorization-headers-bearer
+https://stackoverflow.com/questions/58179180/jwt-authentication-and-swagger-with-net-core-3-0
+https://stackoverflow.com/questions/56535077/how-to-force-swagger-swashbuckle-to-append-an-api-key
+https://stackoverflow.com/questions/41493130/web-api-how-to-add-a-header-parameter-for-all-api-in-swagger
+https://stackoverflow.com/questions/57227912/swaggerui-not-adding-apikey-to-header-with-swashbuckle-5-x
+
+https://www.coderjony.com/blogs/adding-swagger-to-aspnet-core-31-web-api/
