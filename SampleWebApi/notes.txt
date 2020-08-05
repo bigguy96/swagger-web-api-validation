@@ -10,5 +10,17 @@ https://stackoverflow.com/questions/58179180/jwt-authentication-and-swagger-with
 https://stackoverflow.com/questions/56535077/how-to-force-swagger-swashbuckle-to-append-an-api-key
 https://stackoverflow.com/questions/41493130/web-api-how-to-add-a-header-parameter-for-all-api-in-swagger
 https://stackoverflow.com/questions/57227912/swaggerui-not-adding-apikey-to-header-with-swashbuckle-5-x
+https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/696
+https://stackoverflow.com/questions/43447688/setting-up-swagger-asp-net-core-using-the-authorization-headers-bearer/58972781#58972781
+https://stackoverflow.com/questions/41493130/web-api-how-to-add-a-header-parameter-for-all-api-in-swagger
+https://stackoverflow.com/questions/56535077/how-to-force-swagger-swashbuckle-to-append-an-api-key
+https://stackoverflow.com/questions/57943550/how-to-document-api-key-authentication-using-swashbuckle-aspnetcore-v5-0-0-rc2
+https://stackoverflow.com/questions/58197244/swaggerui-with-netcore-3-0-bearer-token-authorization
+https://stackoverflow.com/questions/57227912/swaggerui-not-adding-apikey-to-header-with-swashbuckle-5-x
+https://thecodebuzz.com/jwt-authorization-token-swagger-open-api-asp-net-core-3-0/
+https://thecodebuzz.com/jwt-authentication-in-net-core/
+https://thecodebuzz.com/jwt-authentication-in-asp-net-core-3-0-with-examples/
+
+
 
 https://www.coderjony.com/blogs/adding-swagger-to-aspnet-core-31-web-api/
