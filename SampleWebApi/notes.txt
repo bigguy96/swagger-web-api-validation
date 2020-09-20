@@ -20,7 +20,7 @@ https://stackoverflow.com/questions/57227912/swaggerui-not-adding-apikey-to-head
 https://thecodebuzz.com/jwt-authorization-token-swagger-open-api-asp-net-core-3-0/
 https://thecodebuzz.com/jwt-authentication-in-net-core/
 https://thecodebuzz.com/jwt-authentication-in-asp-net-core-3-0-with-examples/
-
+https://thecodebuzz.com/jwt-authorize-swagger-using-ioperationfilter-asp-net-core/
 
 
 https://www.coderjony.com/blogs/adding-swagger-to-aspnet-core-31-web-api/
