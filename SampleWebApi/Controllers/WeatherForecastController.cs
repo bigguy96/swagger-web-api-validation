@@ -33,7 +33,7 @@ namespace SampleWebApi.Controllers
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<WeatherForecast>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]        
+        [ProducesResponseType(typeof(UnauthorizedContext), StatusCodes.Status401Unauthorized)]
         public ActionResult< IEnumerable<WeatherForecast>> Get()
         {
             var rng = new Random();
@@ -82,10 +82,15 @@ namespace SampleWebApi.Controllers
         /// <response code="201">Ok Created</response>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(BadRequestContext), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(UnauthorizedContext), StatusCodes.Status401Unauthorized)]
         public ActionResult<IEnumerable<WeatherForecast>> Post([FromBody] WeatherForecast weatherForecast)
         {
+            if (weatherForecast == null)
+            {
+                return BadRequest(new BadRequestContext { ErrorMessage = "Weather forecast cannot be null." });
+            }
+            
             return CreatedAtRoute("Get", new { weatherForecast.Summary }, weatherForecast);            
         }
 
@@ -97,10 +102,15 @@ namespace SampleWebApi.Controllers
         /// <response code="204">No Content</response>
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(BadRequestContext), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(UnauthorizedContext), StatusCodes.Status401Unauthorized)]
         public ActionResult<IEnumerable<WeatherForecast>> Put([FromBody] WeatherForecast weatherForecast)
         {
+            if (weatherForecast == null)
+            {
+                return BadRequest(new BadRequestContext { ErrorMessage = "Weather forecast cannot be null." });
+            }
+
             return NoContent();
         }
 
@@ -112,10 +122,15 @@ namespace SampleWebApi.Controllers
         /// <response code="204">No Content</response>
         [HttpDelete]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(BadRequestContext), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(UnauthorizedContext), StatusCodes.Status401Unauthorized)]
         public ActionResult<IEnumerable<WeatherForecast>> Delete(int id)
         {
+            if (id <=0)
+            {
+                return BadRequest(new BadRequestContext { ErrorMessage = "Id must be higher than zero." });
+            }
+
             return NoContent();
         }
     }
