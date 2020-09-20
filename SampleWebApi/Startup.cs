@@ -6,6 +6,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 
 namespace SampleWebApi
 {
@@ -22,9 +24,13 @@ namespace SampleWebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSwaggerGen(c =>
+            services.AddSwaggerGen(options =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                options.IncludeXmlComments(xmlPath);
+
+                options.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Title = "Sample Web API",
                     Version = "v1",
@@ -38,7 +44,7 @@ namespace SampleWebApi
                 });
                 
                 //add api key to headers.
-                c.AddSecurityDefinition("ApiKey", new OpenApiSecurityScheme
+                options.AddSecurityDefinition("ApiKey", new OpenApiSecurityScheme
                 {
                     Name = "api-key",
                     In = ParameterLocation.Header,
@@ -60,17 +66,17 @@ namespace SampleWebApi
                 {
                     { key, new List<string>() }
                 };
-                c.AddSecurityRequirement(requirement);
+                options.AddSecurityRequirement(requirement);
 
                 //add jwt to headers.
-                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     In = ParameterLocation.Header,
                     Description = "Please insert JWT with Bearer into field",
                     Name = "app-jwt",
                     Type = SecuritySchemeType.ApiKey
                 });
-                c.AddSecurityRequirement(new OpenApiSecurityRequirement 
+                options.AddSecurityRequirement(new OpenApiSecurityRequirement 
                 {
                     {  
                         new OpenApiSecurityScheme
@@ -115,6 +121,8 @@ namespace SampleWebApi
             {
                 endpoints.MapControllers();
             });
-        }
+        }        
     }
 }
+
+//https://exceptionnotfound.net/adding-swagger-to-asp-net-core-web-api-using-xml-documentation/

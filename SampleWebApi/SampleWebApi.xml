@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SampleWebApi</name>
+    </assembly>
+    <members>
+        <member name="M:SampleWebApi.Controllers.WeatherForecastController.Get">
+            <summary>
+            Returns a list of weather forecasts.
+            </summary>
+            <returns>An action result of a weather forecast list</returns>
+            <response code="200">List of weather forecasts</response>
+        </member>
+        <member name="M:SampleWebApi.Controllers.WeatherForecastController.Post(SampleWebApi.WeatherForecast)">
+            <summary>
+            Add a new weather forecast.
+            </summary>
+            <param name="weatherForecast">Weather forecaset object</param>
+            <returns>Link to new created weather forecast</returns>
+            <response code="201">Ok Created</response>
+        </member>
+        <member name="M:SampleWebApi.Controllers.WeatherForecastController.Put(SampleWebApi.WeatherForecast)">
+            <summary>
+            Update a weather forecast.
+            </summary>
+            <param name="weatherForecast">Weather forecaset object</param>
+            <returns>No content</returns>
+            <response code="204">No Content</response>
+        </member>
+        <member name="M:SampleWebApi.Controllers.WeatherForecastController.Delete(System.Int32)">
+            <summary>
+            Delete a weather forecast.
+            </summary>
+            <param name="id">Weather forecast id</param>
+            <returns>No content</returns>
+            <response code="204">No Content</response>
+        </member>
+    </members>
+</doc>
